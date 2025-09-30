@@ -1,0 +1,52 @@
+### Register a new user
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "user@gmail.com",
+  "password": "123@4567"
+}
+
+###
+
+### Login user
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "user@gmail.com",
+  "password": "123@4567"
+}
+
+###
+
+### Get user profile (Protected)
+GET http://localhost:5000/api/auth/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzU5MjYwNzQzLCJleHAiOjE3NTkzNDcxNDN9.yEH7oIpizZ4c_agPyw1qU_fyLGB6GA2NhnghXpvvvJ8
+Content-Type: application/json
+
+###
+
+### Get all transactions (Protected)
+GET http://localhost:5000/api/transactions
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzU5MjYwNzQzLCJleHAiOjE3NTkzNDcxNDN9.yEH7oIpizZ4c_agPyw1qU_fyLGB6GA2NhnghXpvvvJ8
+Content-Type: application/json
+
+###
+
+### Make a transfer (Protected)
+POST http://localhost:5000/api/transfer
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzU5MjYwNzQzLCJleHAiOjE3NTkzNDcxNDN9.yEH7oIpizZ4c_agPyw1qU_fyLGB6GA2NhnghXpvvvJ8
+Content-Type: application/json
+
+{
+  "description": "Fund Transfer",
+  "amount": 5000
+}
+
+###
+
+### Get balance (Protected)
+GET http://localhost:5000/api/balance
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzU5MjYwNzQzLCJleHAiOjE3NTkzNDcxNDN9.yEH7oIpizZ4c_agPyw1qU_fyLGB6GA2NhnghXpvvvJ8
+Content-Type: application/json

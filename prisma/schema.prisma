@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id           Int           @id @default(autoincrement())
+  email        String        @unique
+  password     String
+  balance      Float         @default(0)   // ✅ track balance
+  transactions Transaction[]
+}
+
+model Transaction {
+  id          Int             @id @default(autoincrement())
+  amount      Float
+  description String
+  type        TransactionType @default(CREDIT)  // ✅ credit/debit enum
+  createdAt   DateTime        @default(now())   // ✅ auto timestamp
+  user        User            @relation(fields: [userId], references: [id])
+  userId      Int
+}
+
+// ✅ Enum for transaction type
+enum TransactionType {
+  CREDIT
+  DEBIT
+}
