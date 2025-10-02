@@ -15,4 +15,17 @@ Short description: small fintech demo app with user auth, transfers, real-time u
 git clone https://github.com/wise315/WiseTracker.io.git
 cd fintech
 
-## To run 
+## Install dependencies:
+npm install
+
+## Run Prisma migrations:
+npx prisma migrate dev --name init
+
+## Start the server:
+npm run dev
+
+Server runs on http://localhost:5000
+
+
+
+
